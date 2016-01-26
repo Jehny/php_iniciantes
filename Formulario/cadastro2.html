@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+	<html>
+		<meta charset="utf-8">
+		<script language="JavaScript" type="text/javascript" src="js/jquery.js"></script>  
+		<script language="JavaScript" type="text/javascript" src="js/jquery.validate.js"></script> 
+		<link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">	
+
+			<script type="text/javascript">	$(document).ready( function() {
+					 $("#cadastro").validate({
+					    // Define as regras
+					    rules:{
+					      nome:{
+					        // campoNome será obrigatório (required) e terá tamanho mínimo (minLength)
+					        required: true
+					      },
+					      birthday:{
+					        required: true, dateISO: true
+					      },
+					      cpf:{
+					        required: true
+					      },
+					      email:{
+					        required: true
+					      },
+					      endereco:{
+					        required: true
+					      },
+					      numero:{
+					       required: true
+					      },
+					      telefone:{
+					        required: true, phoneBR: true
+					      }
+					      
+					    },
+					    // Define as mensagens de erro para cada regra
+					    messages:{
+					      nome:{
+					        required: "Digite o seu nome",
+					        minLength: "O seu nome deve conter, no mínimo, 3 caracteres"
+					        }
+
+					       birthday: {
+					       	required: "Digite a data de Nascimento", 
+					       	dateISO: "Data inválida",
+					     	},
+					      }
+					  });
+					});
+			</script>
+
+		<head>
+			<title>Cadastro</title>
+		</head>
+
+		<body>
+			<!--<div class="row">
+					<div class="col-lg-3"></div>	
+				</div>-->
+				
+		      	<div class="col-lg-9">    
+					   
+				            <form id="cadastro"  method="post"> 
+							  <legend>Cadastro de Usuário - PHP Teste</legend>
+										
+									<label for="nameid">Nome</label> 
+									<input type="text" id="nameid" name="nome" class="form-control"  placeholder="Min. 3 caracteres"  /><br>
+
+									<label for="birthdayid">Data de Nascimento</label> 
+									<input type="date" name="birthday" id="birthdayid" class="form-control" maxlength="10" /><br>
+
+									<label for="cpfid">CPF</label> 
+									<input type="text" name="cpf" id"cpfid" class="form-control"  maxlength="14" /><br>
+
+									<label for="emailid">Email</label> 
+									<input type="text" name="email" id="emailid" class="form-control"  /><br>		
+
+									<label for"endid">Endereço</label> 
+									<input type="text" name="endereco" id"endid" class="form-control"  /><br>		
+												
+									<label for="numid">Número</label> 
+									<input type="number" name="numero" id="numid" class="form-control"  /><br>	
+
+									<label fro="telid">Telefone</label> 
+									<input type="tel" name="tel" id="telid" class="form-control" /><br>		
+
+									<textarea type="text" name="nota" class="form-control" rows="5" cols="30" id="notaid"  placeholder="Nota"></textarea><br>
+									
+
+								<div class="col-lg-3">		
+								<input class="submit" type="submit" value="Enviar" />
+									  <!--<input class="submit" type="submit" value="Enviar" />-->
+										<!--<span class="glyphicon glyphicon-ok-sign"></span>Cadastrar     -->      
+									
+											<!--<input type="submit" class="btn btn-success" value="Cadastrar" onmousedown="valida_cadastro()">-->
+								</div>
+
+								<div class="row">
+									<div class="col-lg-3"></div>	
+								</div>
+
+								<div class="col-lg-3">		
+									<button class="btn btn-primary btn-lg btn-block" onclick="limpa()">
+										<span class="glyphicon glyphicon-remove-sign" ></span>Cancelar           
+									</button><br>
+								</div>		
+
+						    </form>
+
+				</div>
+		</body>
+</html>

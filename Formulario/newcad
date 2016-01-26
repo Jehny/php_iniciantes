@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+		<script language="JavaScript" type="text/javascript" src="js/jquery.js"></script>  
+		<script language="JavaScript" type="text/javascript" src="js/jquery.validate.js"></script> 
+			
+		<script type="text/javascript">	$(document).ready( function() {
+					  $("#cadastro").validate({
+					    // Define as regras
+					    rules:{
+					      nome:{
+					        // campoNome será obrigatório (required) e terá tamanho mínimo (minLength)
+					        required: true, minlength: 3
+					      },
+					      birthday:{
+					      	required: true,
+					      }
+					      
+					    },
+					    // Define as mensagens de erro para cada regra
+					    messages:{
+					      nome:{
+					        required: "Digite o seu nome",
+					        minLength: "O seu nome deve conter, no mínimo, 2 caracteres"
+					      }
+					    birthday:{
+					        required: "Digite a data de Nascimento"
+					        
+					      }  
+				     				     
+					    }
+					  });
+					});
+			</script>
+
+		<head>
+			<title>Cadastro</title>
+		</head>
+
+		<body>
+							   
+			          <form  id="cadastro" method="post"> 
+					  									
+								<label>Nome</label> 
+								<input type="text" name="nome"   placeholder="Min. 3 caracteres" id="nameid" /><br>
+
+								<label>Data de Nascimento</label> 
+								<input type="date" name="birthday"  maxlength="10" /><br>
+
+								<label>CPF</label> 
+								<input type="text" name="cpf"   maxlength="14" /><br>
+
+								<label>Email</label> 
+								<input type="text" name="email"   /><br>		
+
+								<label>Endereço</label> 
+								<input type="text" name="endereco"   /><br>		
+											
+								<label>Número</label> 
+								<input type="number" name="numero"   /><br>	
+
+								<label>Telefone</label> 
+								<input type="tel" name="tel"  /><br>		
+
+								<textarea id="mensagem" name="campoMensagem"></textarea>
+														
+							  <input class="submit" type="submit" value="Enviar" />
+							
+
+						</form>
+			
+		</body>
+	</html>
